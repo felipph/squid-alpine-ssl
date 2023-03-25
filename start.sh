@@ -35,6 +35,9 @@ create_cert() {
 
 		openssl x509 -inform DER -in /etc/squid-cert/CA.der \
 			-out /etc/squid-cert/CA.pem
+			
+		openssl x509 -inform PEM -in /etc/squid-cert/private.pem\
+			-out /etc/squid-cert/CA.crt
 	else
 		echo "Certificate found..."
 	fi
