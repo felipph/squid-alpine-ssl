@@ -26,7 +26,7 @@ create_cert() {
 	if [ ! -f /etc/squid-cert/bump.crt ]; then
 		echo "Creating certificate..."
 		
-		openssl dhparam -outform PEM -out /etc/squid-cert/bump_dhparam.pem 2048
+		openssl dhparam -dsaparam -outform PEM -out /etc/squid-cert/bump_dhparam.pem 2048
 
 		openssl req -new -newkey rsa:2048 -days 3650 -sha256 -nodes -x509 \
 			-keyout /etc/squid-cert/bump.key \
