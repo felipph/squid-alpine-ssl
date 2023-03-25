@@ -1,5 +1,5 @@
 .pornhub.com
 .xvideos.com
 .porn.*?
-\b(.*?doors.*?)\i
+^http://[0-9a-z]+\.roblox.com\/discover\/\?Keyword=(doors|DOORS.*?)
 
