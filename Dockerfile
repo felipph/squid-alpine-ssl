@@ -1,6 +1,6 @@
-FROM alpine:3.7
+FROM alpine:3.13
 
-LABEL maintainer="alatas@gmail.com"
+LABEL maintainer="luizfelipph@gmail.com"
 
 #set enviromental values for certificate CA generation
 ENV CN=squid.local \
@@ -15,7 +15,7 @@ ENV http_proxy=$all_proxy \
     https_proxy=$all_proxy
 
 RUN apk add --no-cache \
-    squid \
+    squid~=5.0.5-r0 \
     openssl \
     ca-certificates && \
     update-ca-certificates
