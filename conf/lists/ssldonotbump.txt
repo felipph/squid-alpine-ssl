@@ -2,7 +2,5 @@
 .hbomaxcdn.com
 .netflix.com
 .nflxvideo.net
-# Web.whatsapp.com
-(w[0-9]+|[a-z]+)\.web\.whatsapp\.com
-# Whatsapp CDN issue
-.whatsapp\.net
+.whatsapp.com
+.whatsapp.net
