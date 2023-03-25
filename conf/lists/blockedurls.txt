@@ -1,5 +1,5 @@
 .pornhub.com
 .xvideos.com
 .porn.*?
-.*?doors.*?
+".*?doors.*?"
 
