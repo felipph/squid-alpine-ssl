@@ -1,4 +1,5 @@
 # Web.whatsapp.com
+.whatsapp.com
 (w[0-9]+|[a-z]+)\.web\.whatsapp\.com
 # Whatsapp CDN issue
 .whatsapp\.net
