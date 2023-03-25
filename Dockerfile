@@ -15,7 +15,7 @@ ENV http_proxy=$all_proxy \
     https_proxy=$all_proxy
 
 RUN apk add --no-cache \
-    squid~=5.0.5-r0 \
+    squid \
     openssl \
     ca-certificates && \
     update-ca-certificates
