@@ -1,5 +1,5 @@
 .pornhub.com
 .xvideos.com
 .porn.*?
-.*?doors.*?/i
+\b(.*?doors.*?)\i
 
