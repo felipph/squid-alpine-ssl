@@ -11,6 +11,7 @@ services:
     volumes:
       - ./log:/var/log/
       - ./conf/squid.conf:/etc/squid/squid.conf
+      - ./conf/lists:/etc/squid/lists
       - ./cache:/var/cache
       - ./cert:/etc/squid-cert
       - ./start.sh:/usr/local/bin/start.sh

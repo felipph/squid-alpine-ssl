@@ -1,0 +1,4 @@
+.pornhub.com
+.xvideos.com
+.porn.*?
+
