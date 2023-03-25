@@ -1,0 +1,16 @@
+version: "3"
+services:
+  squid-alpine-ssl:
+    image: alatas/squid-alpine-ssl:latest
+    environment:
+      - CN=FelipphCalado
+      - O=OpenWRT
+      - OU=squid
+      - C=BR
+    network_mode: "host"
+    volumes:
+      - ./log:/var/log/
+      - ./conf/squid.conf:/etc/squid/squid.conf
+      - ./cache:/var/cache
+      - ./cert:/etc/squid-cert
+    restart: always
