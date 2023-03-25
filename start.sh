@@ -29,6 +29,7 @@ create_cert() {
 		openssl dhparam -dsaparam -outform PEM -out /etc/squid-cert/bump_dhparam.pem 2048
 
 		openssl req -new -newkey rsa:2048 -days 3650 -sha256 -nodes -x509 \
+			-subj "/CN=squid-proxy-calado/O=home/C=BR" \
 			-keyout /etc/squid-cert/bump.key \
 			-out /etc/squid-cert/bump.crt
 
