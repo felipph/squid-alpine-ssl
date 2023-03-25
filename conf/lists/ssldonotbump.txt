@@ -1,2 +1,4 @@
 .spotify.com
 .hbomaxcdn.com
+.netflix.com
+.nflxvideo.net
