@@ -1,5 +1,6 @@
 .pornhub.com
 .xvideos.com
 .porn.*?
-^http://[0-9a-z]+\.roblox.com\/discover\/\?Keyword=(doors|DOORS.*?)
+^http://[0-9a-z]+\.roblox.com\/(doors|DOORS.*?)
+^https://[0-9a-z]+\.roblox.com\/(doors|DOORS.*?)
 
