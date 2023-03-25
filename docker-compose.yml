@@ -13,4 +13,5 @@ services:
       - ./conf/squid.conf:/etc/squid/squid.conf
       - ./cache:/var/cache
       - ./cert:/etc/squid-cert
+      - ./start.sh:/usr/local/bin/start.sh
     restart: always
