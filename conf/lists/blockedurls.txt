@@ -1,6 +1,6 @@
 .pornhub.com
 .xvideos.com
 .porn.*?
-^http://[0-9a-z]+\.roblox.com\/(doors|DOORS.*?)
-^[.*?doors|DOORS.*?]
-
+http://[0-9a-z]+\.roblox.com\/(doors|DOORS.*?)
+[.*?doors|DOORS.*?]
+.roblox.com
