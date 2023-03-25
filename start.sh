@@ -23,20 +23,42 @@ initialize_cache() {
 }
 
 create_cert() {
-	if [ ! -f /etc/squid-cert/private.pem ]; then
+	if [ ! -f /etc/squid-cert/bump.crt ]; then
 		echo "Creating certificate..."
-		openssl req -new -newkey rsa:2048 -sha256 -days 3650 -nodes -x509 \
-			-extensions v3_ca -keyout /etc/squid-cert/private.pem \
-			-out /etc/squid-cert/private.pem \
-			-subj "/CN=$CN/O=$O/OU=$OU/C=$C" -utf8 -nameopt multiline,utf8
+		
+		openssl dhparam -outform PEM -out /etc/squid-cert/bump_dhparam.pem 4096
 
-		openssl x509 -in /etc/squid-cert/private.pem \
-			-outform DER -out /etc/squid-cert/CA.der
+		openssl req -new -newkey rsa:4096 -days 3650 -sha256 -nodes -x509 \
+			-keyout /etc/squid-cert/bump.key \
+			-out /etc/squid-cert/bump.crt
 
-		openssl x509 -inform DER -in /etc/squid-cert/CA.der \
-			-out /etc/squid-cert/CA.pem
+		openssl x509 -in /etc/squid-cert/bump.crt -outform DER -out /etc/squid-cert/bump.der
 
-		openssl x509 -inform PEM -in /etc/squid-cert/private.pem -out /etc/squid-cert/CA.crt
+
+		# openssl genrsa 4096 > /etc/squid-cert/ca-private.pem
+
+		# openssl req -new -x509 -subj "/CN=squid-proxy-calado/O=home/C=BR" -days 3650 -sha256 \
+		# 	-key /etc/squid-cert/ca-private.pem \
+		# 	-out /etc/squid-cert/ca-private.crt
+
+		# openssl x509 -in /etc/squid-cert/ca-private.crt -outform DER -out /etc/squid-cert/ca-private.der
+
+
+		# openssl genrsa 4096 > /etc/squid-cert/certprivatekey.pem
+
+
+		# openssl req -new -newkey rsa:2048 -sha256 -days 3650 -nodes -x509 \
+		# 	-extensions v3_ca -keyout /etc/squid-cert/private.pem \
+		# 	-out /etc/squid-cert/private.pem \
+		# 	-subj "/CN=$CN/O=$O/OU=$OU/C=$C" -utf8 -nameopt multiline,utf8
+
+		# openssl x509 -in /etc/squid-cert/private.pem \
+		# 	-outform DER -out /etc/squid-cert/CA.der
+
+		# openssl x509 -inform DER -in /etc/squid-cert/CA.der \
+		# 	-out /etc/squid-cert/CA.pem
+
+		# openssl x509 -inform PEM -in /etc/squid-cert/private.pem -out /etc/squid-cert/CA.crt
 	else
 		echo "Certificate found..."
 	fi
