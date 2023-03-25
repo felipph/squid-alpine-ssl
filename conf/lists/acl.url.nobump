@@ -1,0 +1,10 @@
+# Web.whatsapp.com
+(w[0-9]+|[a-z]+)\.web\.whatsapp\.com
+# Whatsapp CDN issue
+.whatsapp\.net
+
+##Outros
+(w[0-9]+|[a-z]+)\.spotify\.com
+(w[0-9]+|[a-z]+)\.hbomaxcdn\.com
+(w[0-9]+|[a-z]+)\.netflix\.com
+(w[0-9]+|[a-z]+)\.nflxvideo.net
